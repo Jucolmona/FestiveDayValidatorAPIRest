@@ -1,3 +1,5 @@
+package com.example.festive_day_validator.api.infraestructure.domain.entities;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 

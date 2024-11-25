@@ -1,4 +1,4 @@
-package com.example.festive_day_validator.api.infraestructure.persistence.entities;
+package com.example.festive_day_validator.api.infraestructure.domain.entities;
 
 import jakarta.annotation.Generated;
 import jakarta.persistence.Column;

@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface IFestivoRepository extends JpaRepository<FestivoEntity, Integer> {
     List<FestivoEntity> findAll();
-    Optional<FestivoEntity> finfindBy(Integer id);
+    Optional<FestivoEntity> findById(Integer id);
     List<FestivoEntity> findByTypeFestive(Integer type);
 }
 

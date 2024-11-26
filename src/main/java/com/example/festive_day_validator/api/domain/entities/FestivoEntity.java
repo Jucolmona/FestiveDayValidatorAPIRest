@@ -34,6 +34,19 @@ public class FestivoEntity {
     @JoinColumn(name = "idtipo")
     private TipoEntity type;
 
+
+
+    public FestivoEntity() {
+    }
+
+    public FestivoEntity(String name, int day, int month, int pascuaDay, int type){
+        this.name = name;
+        this.day = day;
+        this.month = month;
+        this.pascuaDay = pascuaDay;
+        this.type = type;
+    }
+
     public int getId() {
         return id;
     }

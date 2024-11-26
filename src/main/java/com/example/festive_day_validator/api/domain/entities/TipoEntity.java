@@ -11,9 +11,15 @@ public class TipoEntity {
     @Column(name="id")
     private int id;
 
-    @column(name="tipo", length=100)
+    @column(name="tipo", length=100, unique=true)
     private String type;
 
+    public TipoEntity(){
+    }
+
+    public TipoEntity(String type){
+        this.type = type;
+    }
     public int getId() {
         return id;
     }

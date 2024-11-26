@@ -6,13 +6,13 @@ import com.example.festive_day_validator.api.domain.repositories.IFestivoReposit
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 
+import java.util.List;
+
 import org.springframework.data.jpa.repository.support.SimpleJpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class FestivoRepositoryImpl 
-extends SimpleJpaRepository<FestivoEntity, Integer>
-implements IFestivoRepository {
+public class FestivoRepositoryImpl extends SimpleJpaRepository<FestivoEntity, Integer> implements IFestivoRepository {
 
     @PersistenceContext
     private EntityManager entityManager;
@@ -20,6 +20,11 @@ implements IFestivoRepository {
     public FestivoRepositoryImpl(EntityManager em){
         super(FestivoEntity.class, em);
         this.entityManager = em;
+    }
+
+    @Override
+    public List<FestivoEntity> findByTypeFestive(Integer type) {
+        throw new UnsupportedOperationException("Unimplemented method 'findByTypeFestive'");
     }
 
 }

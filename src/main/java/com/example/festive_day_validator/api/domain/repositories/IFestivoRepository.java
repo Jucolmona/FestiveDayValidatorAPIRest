@@ -12,6 +12,6 @@ import com.example.festive_day_validator.api.domain.entities.FestivoEntity;
 public interface IFestivoRepository extends JpaRepository<FestivoEntity, Integer> {
     List<FestivoEntity> findAll();
     Optional<FestivoEntity> findById(Integer id);
-    List<FestivoEntity> findByTypeFestive(Integer type);
+    List<FestivoEntity> findByTypeFestive(String type);
 }
 

@@ -5,6 +5,7 @@ import com.example.festive_day_validator.api.domain.repositories.IFestivoReposit
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
+import jakarta.persistence.TypedQuery;
 
 import java.util.List;
 
@@ -23,8 +24,9 @@ public class FestivoRepositoryImpl extends SimpleJpaRepository<FestivoEntity, In
     }
 
     @Override
-    public List<FestivoEntity> findByTypeFestive(Integer type) {
-        throw new UnsupportedOperationException("Unimplemented method 'findByTypeFestive'");
+    public List<FestivoEntity> findByTypeFestive(String type) {
+        //throw new UnsupportedOperationException("Unimplemented method 'findByTypeFestive'");
+        TypedQuery<FestivoEntity> query = entityManager.createNamedQuery(type, null);
+        return query.getResultList();
     }
-
 }

@@ -9,10 +9,12 @@ import jakarta.persistence.TypedQuery;
 
 import java.util.List;
 
+import org.springframework.context.annotation.Primary;
 import org.springframework.data.jpa.repository.support.SimpleJpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
+@Primary
 public class FestivoRepositoryImpl extends SimpleJpaRepository<FestivoEntity, Integer> implements IFestivoRepository {
 
     @PersistenceContext

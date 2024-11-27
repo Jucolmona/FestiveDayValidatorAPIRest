@@ -9,6 +9,5 @@ import com.example.festive_day_validator.api.infraestructure.repositories.Festiv
 public class ApiApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(ApiApplication.class, args);
-
 	}
 }

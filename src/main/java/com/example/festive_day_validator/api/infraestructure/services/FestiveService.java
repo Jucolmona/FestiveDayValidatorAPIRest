@@ -1,16 +1,10 @@
 package com.example.festive_day_validator.api.infraestructure.services;
 
 import java.util.List;
-import java.util.Optional;
-import java.util.function.Function;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Primary;
-import org.springframework.data.domain.Example;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
-import org.springframework.data.repository.query.FluentQuery.FetchableFluentQuery;
 import org.springframework.stereotype.Service;
 
 import com.example.festive_day_validator.api.domain.entities.FestivoEntity;
@@ -21,6 +15,8 @@ import com.example.festive_day_validator.api.domain.services.IFestivoService;
 @Service
 public class FestiveService implements IFestivoService{
     
+    private static final Logger logger = LoggerFactory.getLogger(FestiveService.class);
+
     @Autowired
     private IFestivoRepository festivoRepository;
 
@@ -36,7 +32,9 @@ public class FestiveService implements IFestivoService{
 
     @Override
     public List<FestivoEntity> listFestiveDays() {
-        return festivoRepository.findAll();
+        logger.info("Fetching all festive days");
+        List<FestivoEntity> festivos = festivoRepository.findAll();
+        logger.info("Found {} festive days", festivos.size());
+        return festivos;
     }
-
 }

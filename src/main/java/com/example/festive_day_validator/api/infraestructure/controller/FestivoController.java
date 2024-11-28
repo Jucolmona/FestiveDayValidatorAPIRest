@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -13,6 +14,7 @@ import com.example.festive_day_validator.api.domain.repositories.IFestivoReposit
 import com.example.festive_day_validator.api.domain.services.IFestivoService;
 
 @RestController
+@RequestMapping("/festivos")
 public class FestivoController {
     @Autowired
     private IFestivoService festivoService;
@@ -20,15 +22,16 @@ public class FestivoController {
     @Autowired
     private IFestivoRepository festivoRepository;
 
-    @GetMapping("/festivos")
+
+    @GetMapping("/festivo")
     public ResponseEntity<List<FestivoEntity>> listFestivos() {
         List<FestivoEntity> festivos = festivoService.listFestiveDays();
         return ResponseEntity.ok(festivos);
     }
     
-    @GetMapping("/festivos/tipo")
-    public ResponseEntity<List<FestivoEntity>> findByType(@RequestParam String tipo) {
-        List<FestivoEntity> festivos = festivoRepository.findByTypeFestive(tipo);
+    @GetMapping("/festivo/tipo")
+    public ResponseEntity<List<FestivoEntity>> findByType(@RequestParam(name="tipo") String type) {
+        List<FestivoEntity> festivos = festivoRepository.findByTypeFestive(type);
         return ResponseEntity.ok(festivos);
     }
 }

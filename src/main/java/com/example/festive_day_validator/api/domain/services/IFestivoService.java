@@ -6,6 +6,7 @@ import com.example.festive_day_validator.api.domain.entities.FestivoEntity;
 
 public interface IFestivoService {
     
-    public List<FestivoEntity> listFestiveDays();
-    
+    public List<FestivoEntity> list();
+    public FestivoEntity getById(int id);
+    public List<FestivoEntity> searhByName(String name);
 }

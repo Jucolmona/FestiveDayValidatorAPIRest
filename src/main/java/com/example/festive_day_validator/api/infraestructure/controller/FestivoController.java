@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.festive_day_validator.api.domain.entities.FestivoEntity;
 import com.example.festive_day_validator.api.domain.repositories.IFestivoRepository;
 import com.example.festive_day_validator.api.domain.services.IFestivoService;
+import org.springframework.web.bind.annotation.RequestMethod;
+
 
 @RestController
 @RequestMapping("/api/festivoValidator")
@@ -25,6 +27,9 @@ public class FestivoController {
         this.service = service;
     }
 
+    @RequestMapping(value = "/list", method=RequestMethod.GET)
+    public List<FestivoEntity> list(){
+        return service.list();
+    }    
     
-  
 }

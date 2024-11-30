@@ -8,5 +8,4 @@ public interface IFestivoService {
     
     public List<FestivoEntity> list();
     public FestivoEntity getById(int id);
-    public List<FestivoEntity> searhByName(String name);
 }

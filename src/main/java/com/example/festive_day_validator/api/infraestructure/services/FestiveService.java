@@ -34,39 +34,8 @@ public class FestiveService implements IFestivoService{
     @Override
     public FestivoEntity getById(int id) {
         logger.info("Getting By Id: " + Integer.toString(id));
-        FestivoEntity festivo = repository.findById(id).isEmpty() ? null : repository.findById(id).get;
+        FestivoEntity festivo = repository.findById(id).isEmpty() ? null : repository.findById(id).get();
         logger.info("get {}", festivo);
         return festivo;
     }
-
-    @Override
-    public List<FestivoEntity> searhByName(String name) {
-        logger.info("Searching By name: " + name);
-
-        throw new UnsupportedOperationException("Unimplemented method 'searhByName'");
-    }
-
-    
-    
-/* 
-    @Autowired
-    private IFestivoRepository festivoRepository;
-
-    @Autowired
-    private ITipoRepository tipoRepository;
-
-    public FestiveService(){}
-
-    public FestiveService(IFestivoRepository fr, ITipoRepository tr){
-        this.festivoRepository = fr;
-        this.tipoRepository = tr;
-    }
-
-    @Override
-    public List<FestivoEntity> listFestiveDays() {
-        logger.info("Fetching all festive days");
-        List<FestivoEntity> festivos = festivoRepository.findAll();
-        logger.info("Found {} festive days", festivos.size());
-        return festivos;
-    }*/
 }
